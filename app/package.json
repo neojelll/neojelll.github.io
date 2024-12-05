@@ -37,5 +37,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://neojelll.github.io/neojelll.github.io"
+  "homepage": "https://neojelll.github.io/neojelll.github.io",
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
 }
