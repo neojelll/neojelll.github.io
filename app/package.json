@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://neojelll.github.io/neojelll.github.io",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
 }
