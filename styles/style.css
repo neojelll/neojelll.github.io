@@ -1,33 +1,78 @@
 body {
-	background-color: rgb(1, 41, 41);
+	background-color: rgb(29, 30, 51);
 	min-height: 100vh;
 	height: 100vh;
-}
-
-.header {
-	background-color: rgb(255, 255, 255);
-}
-
-.header-title {
+  }
+  
+  .header {
+	background-color: rgb(0, 0, 0);
+	width: 100vw;
+	margin: 0;
+  }
+  
+  .dropdown:hover {
+	display: block;
+	color: rgb(29, 30, 51);
+  }
+  
+  /* Скрыть выпадающее меню по умолчанию */
+  .dropdown-menu {
+	background-color: rgb(255, 255, 255, 0.1);
+	display: none;
+  }
+  
+  /* Стиль для текстовой ссылки */
+  .dropdown-toggle {
+	font-weight: 1000;
+	font-size: 50px;
+	color: rgb(255, 255, 255); /* Цвет текста, можно изменить */
+  }
+  
+  .header-title {
 	font-size: 50px;
 	font-weight: 800;
-	text-align: center;
-}
-
-.form {
+	color: rgb(255, 255, 255);
+  }
+  
+  .form {
 	background-color: rgba(255, 255, 255, 0.1);
 	margin: 100px auto;
 	padding: 5%;
 	border-radius: 8px;
 	width: 70vw;
-}
-
-.button {
-	background-color: rgb(13, 130, 146);
-}
-
-footer {
+  }
+  
+  .button {
+	background-color: rgb(29, 30, 51);
+	border: solid 2px rgb(0, 0, 0);
+	color: black;
+  }
+  
+  footer {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-}
+  }
+  
+  .sign-in {
+	background-color: rgb(128, 128, 128);
+	border: 2px solid rgb(29, 30, 51);
+	color: white;
+	font-weight: 800;
+	width: 100px;
+	margin-right: 15px;
+  }
+  
+  .sign-up {
+	background-color: rgb(29, 30, 51);
+	border: 2px solid rgb(128, 128, 128);
+	color: white;
+	font-weight: 800;
+	width: 100px;
+  }
+  
+  .url-form {
+	border: solid 2px rgb(0, 0, 0);
+	color: black;
+  }
+  
