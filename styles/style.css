@@ -2,108 +2,51 @@
 	box-sizing: border-box;
   }
   
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  a,
-  div,
-  header {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+div,
+header {
 	margin: 0;
 	font-weight: normal;
 	font-size: 100%;
-  }
+}
   
-  body {
-	width: 100vw;
-	min-width: 100vw;
-	height: 100vh;
+body {
+	background-color: rgb(1, 41, 41);
 	min-height: 100vh;
-	background: radial-gradient(
-		  circle at 85% 65%,
-		  rgb(192, 213, 174) 0%,
-		  rgba(201, 204, 159, 0.41) 35%,
-		  rgba(173, 194, 140, 0.76) 35%,
-		  rgb(216, 218, 190) 40%,
-		  transparent 100%
-		)
-		80% 50%/100% 120%,
-	  linear-gradient(
-		  340deg,
-		  rgb(184, 210, 180) 0%,
-		  rgb(193, 202, 162) 30%,
-		  rgb(197, 196, 157) 100%
-		)
-		no-repeat;
-	font-family: "Open Sans", Arial, sans-serif;
-  }
+	height: 100vh;
+}
   
-  header {
-	width: 100%;
-	height: 10%;
-	background-color: #000;
-  }
+.header {
+	background-color: rgb(255, 255, 255);
+}
   
-  .overlay {
-	width: 100%;
-	height: 100%;
-	background-color: rgb(255 255 255 / 0.1);
-  }
-  
-  .overlay-title {
-	width: 100%;
-	height: 100%;
-	font-size: 55px;
-	font-weight: 800;
-	font-family: "Arial";
-	color: rgb(173, 194, 140, 0.76);
+.header-title {
+	font-size: 50px;
 	text-align: center;
-	padding-top: 5px;
-  }
+	font-weight: 800;
+}
   
-  .content {
-	width: 55vw;
-	height: 30vh;
-	margin: auto;
-	background-color: rgb(255 255 255 / 0.4);
+.form {
+	background-color: rgba(255, 255, 255, 0.1);
+	margin: 100px auto;
+	padding: 5%;
 	border-radius: 8px;
-  }
+	width: 70vw;
+}
   
-  .form {
-	width: 55vw;
-	height: 30vh;
-	border-radius: 8px;
-	background-color: rgba(66, 64, 64, 0.495);
-	margin: 70px auto;
-  }
+.button {
+	background-color: rgb(13, 130, 146);
+}
   
-  .inpt {
-	width: 70%;
-	display: inline-block;
-	background: rgb(173, 194, 140, 0.76);
-	line-height: 40px;
-	border-width: 0;
-	border-radius: 12px;
-	border: solid 1px rgb(255 255 255);
-	margin: 12% 14%;
-	font-family: "Roboto", sans-serif;
-  }
-  
-  .footer {
+footer {
 	position: fixed;
 	width: 100%;
-	height: 5%;
-	background-color: #000;
 	bottom: 0;
-  }
-  
-  .footer-title {
-	font-weight: 500;
-	font-size: small;
-	color: rgb(173, 194, 140, 0.76);
-	text-align: center;
-	padding-top: 8px;
-  }
+}
   
