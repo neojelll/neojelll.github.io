@@ -13,30 +13,47 @@
   
 
   <body>
-    <div class="container-fluid row align-items-center header">
-      <div class="dropdown col-auto">
-        <a
-          class="btn dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          >SURL</a
-        >
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li>
-            <a
-              class="dropdown-item"
-              href="https://github.com/neojelll/url-shortener/blob/main/README.md"
-              >Docs</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="col-sm container registration d-flex justify-content-end">
-        <button class="btn sign-in">sign in</button>
-        <button class="btn sign-up">sign up</button>
+    <div id="header" class="container-fluid align-items-center header">
+      <script>
+        window.onscroll = function () {
+          let header = document.getElementById("header");
+          if (
+            document.body.scrollTop > 50 ||
+            document.documentElement.scrollTop > 50
+          ) {
+            header.classList.remove("transparent");
+            header.classList.add("solid");
+          } else {
+            header.classList.remove("solid");
+            header.classList.add("transparent");
+          }
+        };
+      </script>
+      <div class="row align-items-center">
+        <div class="dropdown col-4">
+          <a
+            class="btn dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >SURL</a
+          >
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://github.com/neojelll/url-shortener/blob/main/README.md"
+                >Docs</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button class="btn sign-in me-2">sign in</button>
+          <button class="btn sign-up">sign up</button>
+        </div>
       </div>
     </div>
 
@@ -54,6 +71,8 @@
         <button type="submit" class="btn button">Submit</button>
       </div>
     </form>
+
+    <div class="test"></div>
 
     <footer class="bg-black text-white mt-5">
       <div class="container py-4">

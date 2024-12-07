@@ -24,7 +24,7 @@ body {
   /* Стиль для текстовой ссылки */
   .dropdown-toggle {
 	font-weight: 800;
-	font-size: 50px;
+	font-size: 40px;
 	color: rgb(255, 255, 255); /* Цвет текста, можно изменить */
   }
   
@@ -59,7 +59,6 @@ body {
 	border: 2px solid rgb(29, 30, 51);
 	color: white;
 	font-weight: 800;
-	margin-right: 5px;
   }
   
   .sign-up {
@@ -72,5 +71,26 @@ body {
   .url-form {
 	border: solid 2px rgb(0, 0, 0);
 	color: black;
+  }
+  
+  #header {
+	transition: background-color 0.3s ease; /* Плавный переход цвета */
+	transition: background-color 0.3s ease;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+  }
+  
+  .header.transparent {
+	background-color: transparent; /* Прозрачный фон */
+  }
+  
+  .header.solid {
+	background-color: black; /* Черный фон */
+  }
+  
+  .test {
+	height: 3000px;
   }
   
