@@ -1,52 +1,33 @@
-* {
-	box-sizing: border-box;
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  a,
-  div,
-  header {
-	margin: 0;
-	font-weight: normal;
-	font-size: 100%;
-  }
-  
-  body {
+body {
 	background-color: rgb(1, 41, 41);
 	min-height: 100vh;
 	height: 100vh;
-  }
-  
-  .header {
+}
+
+.header {
 	background-color: rgb(255, 255, 255);
-  }
-  
-  .header-title {
+}
+
+.header-title {
 	font-size: 50px;
-	text-align: center;
 	font-weight: 800;
-  }
-  
-  .form {
+	text-align: center;
+}
+
+.form {
 	background-color: rgba(255, 255, 255, 0.1);
 	margin: 100px auto;
 	padding: 5%;
 	border-radius: 8px;
 	width: 70vw;
-  }
-  
-  .button {
+}
+
+.button {
 	background-color: rgb(13, 130, 146);
-  }
-  
-  footer {
+}
+
+footer {
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-  }
-  
+}
