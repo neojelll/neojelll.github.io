@@ -66,6 +66,10 @@ body {
 	border: solid 2px rgb(0, 0, 0);
 	color: black;
   }
+
+  .header {
+	background-color: transparent;
+  }
   
   #header {
 	transition: background-color 0.3s ease; /* Плавный переход цвета */
