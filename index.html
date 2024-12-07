@@ -32,7 +32,7 @@
       <div class="row align-items-center">
         <div class="dropdown col-4">
           <a
-            class="btn dropdown-toggle"
+            class="btn dropdown-toggle title"
             href="#"
             role="button"
             id="dropdownMenuLink"
@@ -43,22 +43,29 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li>
               <a
-                class="dropdown-item"
+                class="dropdown-item dropdown-text"
                 href="https://github.com/neojelll/url-shortener/blob/main/README.md"
-                >Docs</a
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item dropdown-text"
+                href="https://github.com/neojelll/url-shortener"
+                >GitHub</a
               >
             </li>
           </ul>
         </div>
         <div class="col d-flex justify-content-end">
-          <button class="btn sign-in me-2">sign in</button>
-          <button class="btn sign-up">sign up</button>
+          <button class="btn sign-up me-2">sign up</button>
+          <button class="btn sign-in">sign in</button>
         </div>
       </div>
     </div>
 
-    <form class="row gy-2 gx-3 align-items-center form">
-      <div class="col-auto">
+    <form class="row gy-2 gx-3 align-items-center form mt-50">
+      <div class="col-l">
         <label class="visually-hidden" for="AutoSizingInput">URL</label>
         <input
           class="form-control url-form"
@@ -67,16 +74,13 @@
           placeholder="http://example.com"
         />
       </div>
-      <div class="col-auto">
+      <div class="col-l">
         <button type="submit" class="btn button">Submit</button>
       </div>
     </form>
 
-    <div class="test"></div>
-
     <footer class="bg-black text-white container-fluid">
       <div class="container">
-        <!-- Добавляем контейнер для внутреннего отступа -->
         <div class="row">
           <div class="col m-1 pb-0 mb-0">
             <ul class="list-unstyled">
