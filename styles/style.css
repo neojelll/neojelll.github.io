@@ -23,7 +23,7 @@ body {
   
   /* Стиль для текстовой ссылки */
   .dropdown-toggle {
-	font-weight: 1000;
+	font-weight: 800;
 	font-size: 50px;
 	color: rgb(255, 255, 255); /* Цвет текста, можно изменить */
   }
