@@ -3,13 +3,7 @@ body {
 	min-height: 100vh;
 	height: 100vh;
   }
-  
-  .header {
-	background-color: rgb(0, 0, 0);
-	width: 100vw;
-	margin: 0;
-  }
-  
+
   .dropdown:hover .dropdown-menu {
 	display: block;
 	color: rgb(29, 30, 51);
