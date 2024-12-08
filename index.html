@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="styles/style.css">
 
-    <title>URLShortener</title>
+    <title>SURL</title>
   </head>
   
 
@@ -65,6 +65,23 @@
     </div>
 
     <form class="row gy-2 gx-3 align-items-center form mt-50">
+      <div class='col'>
+        <label for='CustomRange' class='form-label range'>Expiration</label>
+        <input type='range' class='form-range' id='CustomRange' min="24" max="2400" value="24"></input>
+        <div class='range' id="rangeValue">24 h</div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const rangeInput = document.getElementById('CustomRange');
+              const rangeValue = document.getElementById('rangeValue');
+      
+              rangeInput.addEventListener('input', function() {
+                  rangeValue.textContent = this.value + ' h';
+              });
+      
+              rangeValue.textContent = rangeInput.value + ' h'; 
+          });
+      </script>
+      </div>
       <div class="col-l">
         <label class="visually-hidden" for="AutoSizingInput">URL</label>
         <input
