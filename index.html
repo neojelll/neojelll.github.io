@@ -1,128 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="styles/style.css">
-
-    <title>SURL</title>
-  </head>
-  
-
-  <body>
-    <div id="header" class="container-fluid align-items-center header">
-      <script>
-        window.onscroll = function () {
-          let header = document.getElementById("header");
-          if (
-            document.body.scrollTop > 50 ||
-            document.documentElement.scrollTop > 50
-          ) {
-            header.classList.remove("transparent");
-            header.classList.add("solid");
-          } else {
-            header.classList.remove("solid");
-            header.classList.add("transparent");
-          }
-        };
-      </script>
-      <div class="row align-items-center">
-        <div class="dropdown col-4">
-          <a
-            class="btn dropdown-toggle title"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >SURL</a
-          >
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li>
-              <a
-                class="dropdown-item dropdown-text"
-                href="https://github.com/neojelll/url-shortener/blob/main/README.md"
-                >Documentation</a
-              >
-            </li>
-            <li>
-              <a
-                class="dropdown-item dropdown-text"
-                href="https://github.com/neojelll/url-shortener"
-                >GitHub</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="col d-flex justify-content-end">
-          <button class="btn sign-up me-2">sign up</button>
-          <button class="btn sign-in">sign in</button>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSN Discounts</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .game {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .btn {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Игры со скидками</h1>
+    <div id="filter">
+        <label for="minDiscount">Минимальный процент скидки: </label>
+        <input type="number" id="minDiscount" placeholder="Введите % скидки" />
+        <button onclick="filterGames()">Отфильтровать</button>
     </div>
+    <div id="games"></div>
 
-    <form class="row gy-2 gx-3 align-items-center form mt-50">
-      <div class='col'>
-        <label for='CustomRange' class='form-label range'>Expiration</label>
-        <input type='range' class='form-range' id='CustomRange' min="24" max="2400" value="24"></input>
-        <div class='range' id="rangeValue">24 h</div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              const rangeInput = document.getElementById('CustomRange');
-              const rangeValue = document.getElementById('rangeValue');
-      
-              rangeInput.addEventListener('input', function() {
-                  rangeValue.textContent = this.value + ' h';
-              });
-      
-              rangeValue.textContent = rangeInput.value + ' h'; 
-          });
-      </script>
-      </div>
-      <div class="col-l">
-        <label class="visually-hidden" for="AutoSizingInput">URL</label>
-        <input
-          class="form-control url-form"
-          type="text"
-          id="AutoSizingInput"
-          placeholder="http://example.com"
-        />
-      </div>
-      <div class="col-l">
-        <button type="submit" class="btn button">Submit</button>
-      </div>
-    </form>
+    <script>
+        let gamesData = [];
 
-    <footer class="bg-black text-white container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col m-1 pb-0 mb-0">
-            <ul class="list-unstyled">
-              <li>
-                <a
-                  href="https://github.com/neojelll/url-shortener"
-                  class="text-white footer-links"
-                  >GitHub</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col m-1 pb-0 mb-0">
-            <p class="footer-contact">Email: surl@gmail.com</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+        async function loadGames() {
+            const response = await fetch('psn_games.json');
+            gamesData = await response.json();
+            displayGames(gamesData);
+        }
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        function displayGames(games) {
+            const gamesContainer = document.getElementById('games');
+            gamesContainer.innerHTML = '';
+            games.forEach(game => {
+                const gameDiv = document.createElement('div');
+                gameDiv.classList.add('game');
+                gameDiv.innerHTML = `
+                    <strong>Название:</strong> ${game.title}<br>
+                    <strong>Текущая цена:</strong> ${game.current_price}<br>
+                    <strong>Старая цена:</strong> ${game.old_price}<br>
+                    <strong>Процент скидки:</strong> ${game.discount_percentage}<br>
+                    <strong>Дата окончания:</strong> ${game.end_date}<br>
+                    <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
+                `;
+                gamesContainer.appendChild(gameDiv);
+            });
+        }
 
+        function filterGames() {
+            const minDiscount = document.getElementById('minDiscount').value;
+            const filteredGames = gamesData.filter(game => {
+                const discount = parseInt(game.discount_percentage);
+                return discount >= minDiscount;
+            });
+            displayGames(filteredGames);
+        }
 
+        loadGames();
+    </script>
+</body>
 </html>
