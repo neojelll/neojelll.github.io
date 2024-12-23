@@ -38,20 +38,22 @@
         }
 
         button {
-            padding: 10px 15px;
-            background: linear-gradient(180deg, #4f1da6 0%, #77418e 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
+            text-decoration: none;
+            display: inline-block;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Эффект при наведении */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень вокруг кнопки */
+            padding: 20px 30px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+            background-size: 200% auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+            transition: .5s;
         }
-
         button:hover {
-            background: linear-gradient(180deg, #5b2a7f 0%, #732d91 50%, #e0e0e0 100%); /* Более темный градиент при наведении */
-            transform: scale(1.05); /* Увеличение кнопки при наведении */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличенная тень при наведении */
+            background-position: right center;
         }
 
         .game {
