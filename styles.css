@@ -1,7 +1,6 @@
 button {
 	text-decoration: none;
 	display: inline-block;
-	padding: 10px 30px;
 	position: relative;
 	border: 2px solid #f1c40f;
 	color: #f1c40f;
@@ -27,4 +26,13 @@ button:hover:after {
 	border-color: #f1c40f;
 	width: calc(100% - 10px);
 	height: calc(100% + 10px);
+}
+
+.filtre {
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	border: 2px solid #f1c40f;
+	color: #f1c40f;
+	font-family: 'Montserrat', sans-serif;
 }
