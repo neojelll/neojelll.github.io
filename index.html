@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #1b2631;
             color: #333;
             margin: 0;
             padding: 20px;
@@ -16,7 +16,7 @@
 
         h1 {
             text-align: center;
-            color: #007bff;
+            color: #ffffff;
         }
 
         label {
@@ -95,7 +95,7 @@
     <h1>Список игр PSN</h1>
     <label for="minDiscount">Минимальная скидка (%):</label>
     <input type="number" id="minDiscount" placeholder="Введите % скидки" />
-    <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
+    <button class='btn' onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
     <div id="games"></div>
 
     <script src="script.js"></script> <!-- Подключите ваш JavaScript файл -->
