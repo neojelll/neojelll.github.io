@@ -1,4 +1,4 @@
-button {
+.btn {
 	text-decoration: none;
 	display: inline-block;
 	position: relative;
@@ -8,7 +8,7 @@ button {
 	transition: .4s;
 }
 
-button:after {
+.btn:after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -22,7 +22,7 @@ button:after {
 	transition: .4s;
 }
 
-button:hover:after {
+.btn:hover:after {
 	border-color: #f1c40f;
 	width: calc(100% - 10px);
 	height: calc(100% + 10px);
