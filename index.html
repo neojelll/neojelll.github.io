@@ -5,75 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSN Игры</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1b2631;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Темный фон */
+            color: #e0e0e0; /* Светлый текст */
             margin: 0;
             padding: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #ffffff;
-        }
-
-        .text {
-            color: #ffffff;
+            color: #1db954; /* Зеленый цвет для заголовка */
         }
 
         label {
             font-weight: bold;
+            color: #ffffff; /* Белый цвет для меток */
         }
 
         input[type="number"] {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #444; /* Темная рамка */
             border-radius: 5px;
             margin-right: 10px;
+            background-color: #222; /* Темный фон для поля ввода */
+            color: #e0e0e0; /* Светлый текст */
         }
 
         .game {
-            background-color: #141c23;
-            border: 1px solid #f1c40f;
+            background-color: #1e1e1e; /* Темный фон для блока игры */
+            border: 1px solid #444; /* Темная рамка */
             border-radius: 5px;
             padding: 15px;
             margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+            position: relative; /* Для абсолютного позиционирования скидки */
         }
 
-        .btn {
-	        text-decoration: none;
-	        margin-top: 10px;
-            padding: 8px 12px;
-	        display: inline-block;
-	        position: relative;
-	        border: 2px solid #f1c40f;
-	        color: #f1c40f;
-	        font-family: 'Montserrat', sans-serif;
-	        transition: .4s;
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #f1c40f; /* Красный фон для скидки */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
         }
-
-        .btn:after {
-	        content: "";
-	        position: absolute;
-	        top: 0;
-	        left: 0;
-	        right: 0;
-	        bottom: 0;
-	        width: 100%;
-	        height: 100%;
-	        margin: auto;
-	        border: 2px solid rgba(0, 0, 0, 0);
-	        transition: .4s;
-        }
-
-.btn:hover:after {
-	border-color: #f1c40f;
-	width: calc(100% - 10px);
-	height: calc(100% + 10px);
-}
 
         .icon {
             margin-right: 5px;
@@ -82,10 +63,29 @@
 </head>
 <body>
     <h1>Список игр PSN</h1>
-    <label class='text' for="minDiscount">Минимальная скидка (%):</label>
+    <label for="minDiscount">Минимальная скидка (%):</label>
     <input type="number" id="minDiscount" placeholder="Введите % скидки" />
-    <button class='btn' onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
-    <div id="games"></div>
+    <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
+    <div id="games">
+        <div class="game">
+            <div class="discount">-30%</div>
+            <h2>Игра 1</h2>
+            <p>Описание игры 1.</p>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="game">
+            <div class="discount">-20%</div>
+            <h2>Игра 2</h2>
+            <p>Описание игры 2.</p>
+            <a href="#" class="btn">Купить</a>
+        </div>
+        <div class="game">
+            <div class="discount">-50%</div>
+            <h2>Игра 3</h2>
+            <p>Описание игры 3.</p>
+            <a href="#" class="btn">Купить</a>
+        </div>
+    </div>
 
     <script src="script.js"></script> <!-- Подключите ваш JavaScript файл -->
 </body>
