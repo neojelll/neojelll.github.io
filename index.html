@@ -48,10 +48,8 @@
                 gameDiv.classList.add('game');
                 gameDiv.innerHTML = `
                     <strong>Название:</strong> ${game.title}<br>
-                    <strong>Текущая цена:</strong> ${game.current_price}<br>
-                    <strong>Старая цена:</strong> ${game.old_price}<br>
-                    <strong>Процент скидки:</strong> ${game.discount_percentage}<br>
-                    <strong>Дата окончания:</strong> ${game.end_date}<br>
+                    <strong>Скидка:</strong> ${game.discount}<br>
+                    <strong>Дата окончания:</strong> ${game.discount_expire}<br>
                     <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
                 `;
                 gamesContainer.appendChild(gameDiv);
@@ -59,15 +57,18 @@
         }
 
         function filterGames() {
-            const minDiscount = document.getElementById('minDiscount').value;
+            const minDiscount = parseInt(document.getElementById('minDiscount').value);
             const filteredGames = gamesData.filter(game => {
-                const discount = parseInt(game.discount_percentage);
+                // Извлекаем число из строки скидки
+                const discount = parseInt(game.discount.replace('%', ''));
                 return discount >= minDiscount;
             });
             displayGames(filteredGames);
         }
 
+        // Инициализация загрузки игр
         loadGames();
+
     </script>
 </body>
 </html>
