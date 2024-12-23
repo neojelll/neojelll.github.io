@@ -1,4 +1,4 @@
-.link-button {
+.btn {
 	text-decoration: none;
 	padding: 10px 30px;
 	display: inline-block;
@@ -9,7 +9,7 @@
 	transition: .4s;
 }
 
-.link-button:after {
+.btn:after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -23,13 +23,13 @@
 	transition: .4s;
 }
 
-.link-button:hover:after {
+.btn:hover:after {
 	border-color: #f1c40f;
 	width: calc(100% - 10px);
 	height: calc(100% + 10px);
 }
 
-.filter-button {
+.filter {
 	text-decoration: none;
 	display: inline-block;
 	padding: 10px 30px;
