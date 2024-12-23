@@ -5,81 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSN Игры</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1b1b1b; /* Темный фон */
+            color: #ffffff; /* Белый текст */
             margin: 0;
             padding: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #007bff;
+            color: #ffffff; /* Белый цвет заголовка */
+            font-size: 2.5em; /* Увеличенный размер шрифта */
+            margin-bottom: 20px;
+            padding: 10px 0; /* Отступ сверху и снизу */
         }
 
         label {
             font-weight: bold;
+            color: #ffffff; /* Белый цвет для меток */
         }
 
         input[type="number"] {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #444; /* Темная рамка */
             border-radius: 5px;
             margin-right: 10px;
+            background-color: #333; /* Темный фон для поля ввода */
+            color: #ffffff; /* Белый текст */
         }
 
         button {
             padding: 10px 15px;
-            background-color: #007bff;
+            background: linear-gradient(180deg, #6f2c91 0%, #8e44ad 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Эффект при наведении */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень вокруг кнопки */
         }
 
         button:hover {
-            background-color: #0056b3;
+            background: linear-gradient(180deg, #5b2a7f 0%, #732d91 50%, #e0e0e0 100%); /* Более темный градиент при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличенная тень при наведении */
         }
 
         .game {
-            background-color: white;
-            border: 1px solid #ccc;
+            background-color: rgba(60, 0, 60, 0.85); /* Освещенный темно-фиолетовый фон для блока игры */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная рамка */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+            position: relative; /* Для абсолютного позиционирования скидки */
+            transition: transform 0.3s, box-shadow 0.3s; /* Эффект при наведении */
+        }
+
+        .game:hover {
+            transform: translateY(-5px); /* Подъем блока игры при наведении */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Увеличенная тень при наведении */
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #6a0dad; /* Фиолетовый фон для скидки */
+            color: white;
+            padding: 5px 10px;
             border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Тень для скидки */
         }
 
         .btn {
             display: inline-block;
             margin-top: 10px;
-            padding: 8px 12px;
-            background-color: #28a745;
+            padding: 10px 15px;
+            background: linear-gradient(180deg, #6f2c91 0%, #8e44ad 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s; /* Эффект при наведении */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень вокруг кнопки */
         }
 
         .btn:hover {
-            background-color: #218838;
+            background: linear-gradient(180deg, #5b2a7f 0%, #732d91 50%, #e0e0e0 100%); /* Более темный градиент при наведении */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличенная тень при наведении */
         }
 
-        .icon {
-            margin-right: 5px;
+        /* Стили для сетки */
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; /* Промежутки между элементами */
         }
     </style>
 </head>
 <body>
     <h1>Список игр PSN</h1>
-    <label for="minDiscount">Минимальная скидка (%):</label>
-    <input type="number" id="minDiscount" placeholder="Введите % скидки" />
-    <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
-    <div id="games"></div>
-
-    <script src="script.js"></script> <!-- Подключите ваш JavaScript файл -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <label for="minDiscount">Минимальная скидка (%):</label>
+        <input type="number" id="minDiscount" placeholder="Введите % скидки" />
+        <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
