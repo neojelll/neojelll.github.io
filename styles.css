@@ -1,5 +1,6 @@
-.btn {
+.link-button {
 	text-decoration: none;
+	padding: 10px 30px;
 	display: inline-block;
 	position: relative;
 	border: 2px solid #f1c40f;
@@ -8,7 +9,7 @@
 	transition: .4s;
 }
 
-.btn:after {
+.link-button:after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -22,15 +23,16 @@
 	transition: .4s;
 }
 
-.btn:hover:after {
+.link-button:hover:after {
 	border-color: #f1c40f;
 	width: calc(100% - 10px);
 	height: calc(100% + 10px);
 }
 
-.filtre {
+.filter-button {
 	text-decoration: none;
 	display: inline-block;
+	padding: 10px 30px;
 	position: relative;
 	border: 2px solid #f1c40f;
 	color: #f1c40f;
