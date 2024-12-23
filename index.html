@@ -39,7 +39,7 @@
 
         button {
             padding: 10px 15px;
-            background: linear-gradient(180deg, #4a1067 0%, #7f26a5 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
+            background: linear-gradient(180deg, #4f1da6 0%, #77418e 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
             color: white;
             border: none;
             border-radius: 5px;
@@ -55,7 +55,7 @@
         }
 
         .game {
-            background-color: rgba(5, 0, 5, 0.85); /* Освещенный темно-фиолетовый фон для блока игры */
+            background-color: rgba(19, 0, 19, 0.85); /* Освещенный темно-фиолетовый фон для блока игры */
             border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная рамка */
             border-radius: 10px;
             padding: 20px;
@@ -110,12 +110,10 @@
 </head>
 <body>
     <h1>Список игр PSN</h1>
-    <div style="margin-bottom: 20px;">
-        <label for="minDiscount">Минимальная скидка (%):</label>
-        <input type="number" id="minDiscount" placeholder="Введите % скидки" />
-        <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
-        <div id="games"></div>
-    </div>
+    <label for="minDiscount">Минимальная скидка (%):</label>
+    <input type="number" id="minDiscount" placeholder="Введите % скидки" />
+    <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
+    <div id="games"></div>
     <script src="script.js"></script>
 </body>
 </html>
