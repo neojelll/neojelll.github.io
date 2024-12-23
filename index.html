@@ -3,72 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSN Discounts</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>PSN Игры</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
             padding: 20px;
         }
-        .game {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px 0;
+
+        h1 {
+            text-align: center;
+            color: #007bff;
         }
-        .btn {
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            color: blue;
-            text-decoration: underline;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .game {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .icon {
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Игры со скидками</h1>
-    <div id="filter">
-        <label for="minDiscount">Минимальный процент скидки: </label>
-        <input type="number" id="minDiscount" placeholder="Введите % скидки" />
-        <button onclick="filterGames()">Отфильтровать</button>
-    </div>
+    <h1>Список игр PSN</h1>
+    <label for="minDiscount">Минимальная скидка (%):</label>
+    <input type="number" id="minDiscount" placeholder="Введите % скидки" />
+    <button onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
     <div id="games"></div>
 
-    <script>
-        let gamesData = [];
-
-        async function loadGames() {
-            const response = await fetch('psn_games.json');
-            gamesData = await response.json();
-            displayGames(gamesData);
-        }
-
-        function displayGames(games) {
-            const gamesContainer = document.getElementById('games');
-            gamesContainer.innerHTML = '';
-            games.forEach(game => {
-                const gameDiv = document.createElement('div');
-                gameDiv.classList.add('game');
-                gameDiv.innerHTML = `
-                    <strong>Название:</strong> ${game.title}<br>
-                    <strong>Скидка:</strong> ${game.discount}<br>
-                    <strong>Дата окончания:</strong> ${game.discount_expire}<br>
-                    <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
-                `;
-                gamesContainer.appendChild(gameDiv);
-            });
-        }
-
-        function filterGames() {
-            const minDiscount = parseInt(document.getElementById('minDiscount').value);
-            const filteredGames = gamesData.filter(game => {
-                // Извлекаем число из строки скидки
-                const discount = parseInt(game.discount.replace('%', ''));
-                return discount <= minDiscount;
-            });
-            displayGames(filteredGames);
-        }
-
-        // Инициализация загрузки игр
-        loadGames();
-
-    </script>
+    <script src="script.js"></script> <!-- Подключите ваш JavaScript файл -->
 </body>
 </html>
