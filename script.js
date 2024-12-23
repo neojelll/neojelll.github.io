@@ -31,7 +31,7 @@ function filterGames() {
     
     const filteredGames = gamesData.filter(game => {
         // Извлекаем число из строки скидки
-        const discount = parseInt(game.discount.replace('%', '').replace('-', ''));
+        const discount = parseInt(game.discount.replace('%', '').replace('-', ''), 10);
         return discount <= minDiscount;
     });
     
