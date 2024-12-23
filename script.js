@@ -13,10 +13,12 @@ function displayGames(games) {
         const gameDiv = document.createElement('div');
         gameDiv.classList.add('game');
         gameDiv.innerHTML = `
-            <strong class='text'>Название:</strong> ${game.title}<br>
-            <div class="discount">${game.discount}</div>
-            <strong class='text'>Дата окончания:</strong> ${game.discount_expire}<br>
-            <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
+            <div class="game">
+                <div class="discount">${game.discount}</div>
+                <h2>Название:</h2> ${game.title}<br>
+                <p>Дата окончания:</p> ${game.discount_expire}<br>
+                <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
+            </div>
         `;
         gamesContainer.appendChild(gameDiv);
     });
