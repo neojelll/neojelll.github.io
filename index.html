@@ -6,6 +6,7 @@
     <title>PSN Игры</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -37,25 +38,6 @@
             color: #ffffff; /* Белый текст */
         }
 
-        button {
-            text-decoration: none;
-            display: inline-block;
-            color: white;
-            padding: 20px 30px;
-            margin: 10px 20px;
-            border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
-            background-size: 200% auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-            transition: .5s;
-        }
-        button:hover {
-            background-position: right center;
-        }
-
         .game {
             background-color: rgba(19, 0, 19, 0.85); /* Освещенный темно-фиолетовый фон для блока игры */
             border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная рамка */
@@ -84,24 +66,6 @@
             font-size: 1.2em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Тень для скидки */
         }
-
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: linear-gradient(180deg, #6f2c91 0%, #8e44ad 50%, #f9f9c5 100%); /* Плавный градиент от фиолетового к желто-белому снизу */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, box-shadow 0.3s; /* Эффект при наведении */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень вокруг кнопки */
-        }
-
-        .btn:hover {
-            background: linear-gradient(180deg, #5b2a7f 0%, #732d91 50%, #e0e0e0 100%); /* Более темный градиент при наведении */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Увеличенная тень при наведении */
-        }
-
         /* Стили для сетки */
         .game-container {
             display: grid;
