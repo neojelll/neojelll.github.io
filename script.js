@@ -14,7 +14,7 @@ function displayGames(games) {
         gameDiv.classList.add('game');
         gameDiv.innerHTML = `
             <strong class='text'>Название:</strong> ${game.title}<br>
-            <strong class='text'>Скидка:</strong> ${game.discount}<br>
+            <div class="discount">${game.discount}</div>
             <strong class='text'>Дата окончания:</strong> ${game.discount_expire}<br>
             <a class="btn" href="${game.link}" target="_blank">Подробнее</a>
         `;
