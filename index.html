@@ -19,6 +19,10 @@
             color: #ffffff;
         }
 
+        .text {
+            color: #ffffff;
+        }
+
         label {
             font-weight: bold;
         }
@@ -30,23 +34,8 @@
             margin-right: 10px;
         }
 
-        button {
-            text-decoration: none;
-	        margin-top: 10px;
-            padding: 8px 12px;
-	        display: inline-block;
-	        position: relative;
-	        border: 2px solid #f1c40f;
-	        color: #f1c40f;
-	        font-family: 'Montserrat', sans-serif;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
         .game {
-            background-color: #1b2631;
+            background-color: #141c23;
             border: 1px solid #f1c40f;
             border-radius: 5px;
             padding: 15px;
@@ -93,7 +82,7 @@
 </head>
 <body>
     <h1>Список игр PSN</h1>
-    <label for="minDiscount">Минимальная скидка (%):</label>
+    <label class='text' for="minDiscount">Минимальная скидка (%):</label>
     <input type="number" id="minDiscount" placeholder="Введите % скидки" />
     <button class='btn' onclick="filterGames()"><i class="fas fa-filter icon"></i>Фильтровать</button>
     <div id="games"></div>
