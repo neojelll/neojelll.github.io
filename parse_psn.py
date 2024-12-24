@@ -40,9 +40,11 @@ async def get_proxy_list() -> list[str]:
         raise e
 
 
-async def get_proxy(proxy_list: list[str], proxy_id: int) -> tuple[str, int]:
+async def get_proxy(proxy_list: list[str], proxy_id: int) -> tuple[str, int] | tuple[None, int]:
     logger.debug(f'Start get proxy func with params: {proxy_id}')
     try:
+        if proxy_list == []:
+            return None, 0
         if proxy_id >= len(proxy_list) - 1:
             proxy_id = 0
         else:
@@ -54,10 +56,10 @@ async def get_proxy(proxy_list: list[str], proxy_id: int) -> tuple[str, int]:
         raise e
 
 
-async def fetch_game_data(page_number: int, proxy: str):
+async def fetch_game_data(page_number: int, proxy: str | None):
     url = f'https://store.playstation.com/en-tr/category/1bc5f455-a48e-43d1-b429-9c52fa78bb4d/{page_number}'
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(proxies=proxy) as client:
         try:
             response = await client.get(url)
             logger.debug(f'Fetched page {page_number}: {response.status_code}')
@@ -70,8 +72,8 @@ async def fetch_game_data(page_number: int, proxy: str):
             return None
 
 
-async def fetch_discount_data(link: str, proxy: str):
-    async with httpx.AsyncClient() as client:
+async def fetch_discount_data(link: str, proxy: str | None):
+    async with httpx.AsyncClient(proxies=proxy) as client:
         try:
             response = await client.get(link)
             logger.debug(f'Fetched discount page: {link} - Status: {response.status_code}')
