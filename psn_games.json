@@ -230,5 +230,85 @@
         "new_price": 77.25,
         "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
         "link": "https://store.playstation.com/en-tr/product/EP1018-PPSA01603_00-STOR01ALLP00R0VP"
+    },
+    {
+        "title": "Phasmophobia",
+        "discount": "-25%",
+        "old_price": 665.0,
+        "new_price": 498.75,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP7789-PPSA09030_00-5648706170853559"
+    },
+    {
+        "title": "Baldur's Gate 3",
+        "discount": "-20%",
+        "old_price": 2499.0,
+        "new_price": 1999.2,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP3383-PPSA14002_00-0872837811678079"
+    },
+    {
+        "title": "Baldur's Gate 3 - Digital Deluxe Edition",
+        "discount": "-20%",
+        "old_price": 2799.0,
+        "new_price": 2239.2,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP3383-PPSA14002_00-0597671614512529"
+    },
+    {
+        "title": "Baldur's Gate 3 - Digital Deluxe Edition DLC",
+        "discount": "-20%",
+        "old_price": 389.0,
+        "new_price": 311.2,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP3383-PPSA14002_00-0278344258614133"
+    },
+    {
+        "title": "Star Wars Outlaws",
+        "discount": "-35%",
+        "old_price": 2799.0,
+        "new_price": 1819.35,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP0001-PPSA08260_00-GAME000000000000"
+    },
+    {
+        "title": "Star Wars Outlaws Ultimate Edition",
+        "discount": "-35%",
+        "old_price": 4899.0,
+        "new_price": 3184.35,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP0001-PPSA08260_00-ULTIMATEDITION00"
+    },
+    {
+        "title": "Star Wars Outlaws - Season Pass",
+        "discount": "-25%",
+        "old_price": 1399.0,
+        "new_price": 1049.25,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP0001-PPSA08260_00-OUTLAWSEASON0000"
+    },
+    {
+        "title": "Star Wars Outlaws Ultimate Content Pack",
+        "discount": "-25%",
+        "old_price": 699.0,
+        "new_price": 524.25,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP0001-PPSA08260_00-ULTPACKBUNDLE000"
+    },
+    {
+        "title": "Red Dead Redemption 2",
+        "discount": "-67%",
+        "old_price": 2299.0,
+        "new_price": 758.67,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP1004-CUSA08519_00-REDEMPTIONFULL02"
+    },
+    {
+        "title": "Red Dead Online",
+        "discount": "-50%",
+        "old_price": 769.0,
+        "new_price": 384.5,
+        "discount_expire": "Offer ends 6/1/2025 11:59 PM UTC",
+        "link": "https://store.playstation.com/en-tr/product/EP1004-CUSA08519_00-REDEMPTION000002"
     }
 ]

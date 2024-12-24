@@ -155,7 +155,7 @@ async def main():
 
             psn_games.append(psn_game)
 
-            with open('games_psn.json', 'w', encoding='utf-8') as file:
+            with open('psn_games.json', 'w', encoding='utf-8') as file:
                 json.dump(psn_games, file, ensure_ascii=False, indent=4)
                 
             time.sleep(config['wait_response'])
