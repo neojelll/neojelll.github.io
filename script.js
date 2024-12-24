@@ -25,13 +25,13 @@ function displayGames(games) {
 function filterGames() {
     const minDiscount = parseInt(document.getElementById('minDiscount').value);
     if (isNaN(minDiscount)) {
-        alert("Пожалуйста, введите корректное число для минимальной скидки.");
+        alert("Please enter a correct minimum discount value.");
         return;
     }
     
     const filteredGames = gamesData.filter(game => {
         const discount = Math.abs(parseInt(discountString.replace('%', '')));
-        return discount <= minDiscount;
+        return discount >= minDiscount;
     });
     
     displayGames(filteredGames);
