@@ -1,5 +1,6 @@
 .btn {
 	text-decoration: none;
+	background-color: transparent;
 	margin-top: 10px;
     padding: 8px 12px;
 	display: inline-block;
@@ -8,6 +9,7 @@
 	color: #f1c40f;
 	font-family: 'Montserrat', sans-serif;
 	transition: .4s;
+	cursor: pointer;
 }
 
 .btn:after {
