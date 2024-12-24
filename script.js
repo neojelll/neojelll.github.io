@@ -15,6 +15,8 @@ function displayGames(games) {
         gameDiv.innerHTML = `
             <div class="discount">${game.discount}</div>
             <strong>Name:</strong> ${game.title}<br>
+            <strong>Old price:</strong> ${game.old_price}<br>
+            <strong>New price:</strong> ${game.new_price}<br>
             <strong>Discount ends:</strong> ${game.discount_expire}<br>
             <a class="btn" href="${game.link}" target="_blank">More details</a>
         `;
